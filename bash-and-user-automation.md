@@ -1,54 +1,66 @@
-# Day 2 – Bash Basics & User Automation
+# Bash Basics & User Automation
+Objective
 
-## Objective
-Understand Bash scripting fundamentals and automate Linux user creation.
-
----
-
+# Understand Bash scripting fundamentals and automate Linux user creation.
 # 1. Bash Basics
+Check Bash Version
+Bash
 
-## Check Bash Version
-
-```bash
 bash --version
 
 Example output:
-
 GNU bash, version 5.2.x (x86_64-pc-linux-gnu)
 Echo Command
+Bash
+
 echo "Hello World"
-2. Variables in Bash
+
+# 2. Variables in Bash
 Declaring Variables
+Bash
+
 name="joel"
 echo "Hello, $name"
 
 Rules:
 
-No spaces around =
+    No spaces around =
 
-Access variable using $variable_name
+    Access variable using $variable_name
 
 Example:
+Bash
 
 number=43
 echo "The number is $number"
+
 Environment Variables
+Bash
+
 echo "Your PATH is $PATH"
+
 Local vs Global Variables
+Bash
+
 myfunction() {
   local local_var="This is local"
   echo $local_var
 }
 
 myfunction
-3. String Operations
+
+# 3. String Operations
 Concatenation
+Bash
+
 greeting="Hello"
 name="World"
 echo "$greeting $name"
-4. Arithmetic Operations
 
-Bash supports integer arithmetic using $(( ))
+# 4. Arithmetic Operations
+
+Bash supports integer arithmetic using $(( )).
+Bash
 
 num1=23
 num2=70
@@ -57,75 +69,66 @@ echo "The sum is $sum"
 
 Operators:
 
-+ Addition
+    + Addition
 
-- Subtraction
+    - Subtraction
 
-* Multiplication
+    * Multiplication
 
-/ Division
+    / Division
 
-% Modulus
+    % Modulus
 
-Note: Bash does not support floating-point arithmetic natively.
+    Note: Bash does not support floating-point arithmetic natively.
 
-5. Arrays in Bash
+# 5. Arrays in Bash
+Bash
+
 fruits=("Apple" "Strawberry" "Mango")
 
 for fruit in "${fruits[@]}"; do
   echo $fruit
 done
-6. Comparison Operators
-Numeric Comparison
 
--eq Equal to
+# 6. Comparison Operators
+Numeric Comparison	Description	String Comparison	Description
+-eq	Equal to	=	Equal to
+-ne	Not equal to	!=	Not equal to
+-lt	Less than	<	Less than (ASCII)
+-le	Less than or equal to	>	Greater than (ASCII)
+-gt	Greater than		
+-ge	Greater than or equal to		
+# 7. Logical Operators
 
--ne Not equal to
+    && Logical AND
 
--lt Less than
+    || Logical OR
 
--le Less than or equal to
+    ! Logical NOT
 
--gt Greater than
+# 8. File Test Operators
 
--ge Greater than or equal to
+    -e Check if file exists
 
-String Comparison
+    -d Check if directory exists
 
-= Equal to
+    -f Check if regular file
 
-!= Not equal to
+    -s Check if file is not empty
 
-< Less than (ASCII comparison)
+# 9. If-Else Statement
+Bash
 
-> Greater than (ASCII comparison)
-
-7. Logical Operators
-
-&& Logical AND
-
-|| Logical OR
-
-! Logical NOT
-
-8. File Test Operators
-
--e Check if file exists
-
--d Check if directory exists
-
--f Check if regular file
-
--s Check if file is not empty
-
-9. If-Else Statement
 if [ condition ]; then
   echo "Condition is true"
 else
   echo "Condition is false"
 fi
-10. User Creation Automation Script
+
+# 10. User Creation Automation Script
 Script: create_user.sh
+Bash
+
 #!/bin/bash
 
 echo "What is the new username?"
@@ -140,36 +143,33 @@ sudo useradd -m $USERNAME
 sudo passwd $USERNAME
 
 echo "Done! User $USERNAME is ready."
+
 What This Script Does
 
-Takes username input
+    Takes username input.
 
-Checks if user already exists
+    Checks if user already exists.
 
-Creates user with home directory
+    Creates user with home directory.
 
-Prompts to set password
+    Prompts to set password.
 
-Displays confirmation message
+    Displays confirmation message.
 
-Security Notes
+# Security Notes
 
-Avoid using root for daily operations.
+    Avoid using root for daily operations.
 
-Follow the principle of least privilege.
+    Follow the principle of least privilege.
 
-Automating administrative tasks reduces human error.
+    Automating administrative tasks reduces human error.
 
-Key Learning Summary
+# Key Learning Summary
 
-Practiced Bash fundamentals
+    Practiced Bash fundamentals.
 
-Understood variables, arithmetic, and conditionals
+    Understood variables, arithmetic, and conditionals.
 
-Learned comparison and file test operators
+    Learned comparison and file test operators.
 
-Built first Linux user automation script
-
-
----
-
+    Built first Linux user automation script.
